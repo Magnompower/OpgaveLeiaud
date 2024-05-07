@@ -1,0 +1,68 @@
+$primary-color: #6200EA;
+$background-color: #808080;
+$input-bg-color: #ffc372;
+$font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+body2 {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $input-bg-color;
+  font-family: $font-stack;
+  display: flex;
+}
+
+
+form {
+  align-content: center;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 100px;
+  border-radius: 60px;
+  background-color: $background-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input, button {
+    margin: 10px;
+    padding: 12px 20px;
+    width: calc(100% - 100px);
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  input {
+    background-color: lighten($input-bg-color, 5%);
+  }
+
+  button {
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+transform-style: preserve-3d;
+    &:hover {
+      background-color: #438c25;
+    }
+  }
+  button:active{
+    transform: scale(1.2);
+  }
+}
+
+input:focus, button:focus {
+  outline: none;
+  border-color: darken($primary-color, 15%);
+}
+
+input[type="password"] {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+input[type="username"]{
+  text-align: center;
+}
