@@ -2,20 +2,25 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Login</title>
 </head>
 <body>
 
-<h1>Velkommen!</h1>
-
-<p>Log venligst ind for at fortsætte ('user' + 'pass')</p>
+<h1>Velkommen til dine lokale nyheder!</h1>
 
 <form (ngSubmit)="onSubmit()">
+  <p>Skriv brugernavn og kode her for at logge ind</p>
   <input type="username" [(ngModel)]="username" name="username" placeholder="user" required>
   <input type="password" [(ngModel)]="password" name="password" placeholder="pass" required>
   <button type="submit">Login</button>
 </form>
 
+<form (ngSubmit)="onSubmitUser()">
+  <p>Mangler du en bruger? Så opret dig her</p>
+  <input type="username" name="username" placeholder="user" required>
+  <input type="password" name="password" placeholder="pass" required>
+  <button type="submit">Opret bruger</button>
+</form>
 
 </body>
 </html>
