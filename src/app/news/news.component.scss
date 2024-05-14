@@ -1,0 +1,90 @@
+$primary-color: #6200EA;
+$secondary-color: #ffc372;
+$success-color: #438c25;
+$text-color: #333;
+
+$primary-font: 'Bangers', sans-serif;
+
+$font-size-base: 16px;
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $primary-font;
+  font-size: $font-size-base;
+}
+
+body {
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  background-color: $primary-color;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    color: white;
+    font-size: 2.5rem;
+  }
+}
+
+.news-component {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.news-box {
+  background-color: $secondary-color;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 1.5rem);
+  min-width: 200px;
+  max-width: calc(50% - 1.5rem);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+  animation: fadeIn 1s ease forwards;
+  height: 400px;
+
+
+  &:hover {
+    //transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(2.2);
+    z-index: 10;
+    //margin-left: -5%;
+    //margin-right: -5%;
+  }
+
+  .news-title {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  .news-content {
+    color: $text-color;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

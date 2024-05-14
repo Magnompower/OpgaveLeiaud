@@ -6,17 +6,17 @@
 </head>
 <body>
 
-<h1>Velkommen til dine lokale nyheder!</h1>
+<h1><strong>Velkommen til dine lokale nyheder!</strong></h1>
 
 <form (ngSubmit)="onSubmit()">
-  <p>Skriv brugernavn og kode her for at logge ind</p>
+  <p><strong>Skriv brugernavn og kode her for at logge ind</strong></p>
   <input type="username" [(ngModel)]="username" name="username" placeholder="user" required>
   <input type="password" [(ngModel)]="password" name="password" placeholder="pass" required>
   <button type="submit">Login</button>
 </form>
 
 <form (ngSubmit)="onSubmitUser()">
-  <p>Mangler du en bruger? Så opret dig her</p>
+  <p>Mangler du en bruger?<br><strong>Opret dig her</strong></p>
   <input type="username" name="username" placeholder="user" required>
   <input type="password" name="password" placeholder="pass" required>
   <button type="submit">Opret bruger</button>
