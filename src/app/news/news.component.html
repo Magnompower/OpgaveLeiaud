@@ -1,10 +1,17 @@
 <header class="header">
-  <h1>Seneste nyheder</h1>
+  <h1>Seneste Nyheder</h1>
 </header>
 
 <main class="news-component">
   <article class="news-box" *ngFor="let news of newsItems">
-        <h2>{{ news.title }}</h2>
-        <p>{{ news.content }}</p>
+        <h2 class="news-title">{{ news.title }}</h2>
+        <p class="news-content">{{ news.content }}</p>
   </article>
 </main>
+
+<footer>
+  <div class="footer">
+<p>Opdateret: 22:03 18-05-2024</p>
+    <a href="localhost:4200">Kontakt os</a>
+  </div>
+</footer>

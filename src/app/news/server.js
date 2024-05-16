@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.use(cors({
-  origin: "*", // Tillad alle oprindelser
+  origin: "*", // Tillad alle oprindelser ??
   methods: ["GET", "POST", "PUT", "DELETE"], // Tilladte metoder
   allowedHeaders: ["Content-Type", "Authorization"]
 }));

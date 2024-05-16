@@ -12,13 +12,17 @@ export class NewsService {
   constructor(private http: HttpClient) {
   }
 
-  getNews(): Observable<News[]> {
+  // getNews(): Observable<any> {return this.http.get(this.apiUrl);} //Brug denne for at se databasen displayed.
+
+ getNews(): Observable<News[]> {
     const username = 'user';
     const password = 'pass';
     const headers = new HttpHeaders({
       'Authorization': 'Basic ' + btoa(username + ':' + password)
     });
 
-    return this.http.get<News[]>(this.apiUrl, { headers: headers });
+    return this.http.get<News[]>(this.apiUrl, {headers: headers});
   }
 }
+
+

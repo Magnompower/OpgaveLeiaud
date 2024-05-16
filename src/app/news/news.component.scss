@@ -24,15 +24,17 @@ body {
 }
 
 .header {
+  position: relative;
   width: 100%;
   background-color: $primary-color;
+  border-radius: 10px;
   padding: 1rem;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   h1 {
     color: white;
-    font-size: 2.5rem;
+    font-size: 40px;
   }
 }
 
@@ -40,51 +42,84 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: fit-content(5px);
+  grid-gap: 30px;
+  align-items: start;
+  overflow: auto;
+  width: auto;
 }
 
 .news-box {
+  margin-top: 30px;
   background-color: $secondary-color;
   padding: 1.5rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(50% - 1.5rem);
+  flex: 1 1 calc(50% - 30px);
   min-width: 200px;
-  max-width: calc(50% - 1.5rem);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
-  animation: fadeIn 1s ease forwards;
-  height: 400px;
-
-
-  &:hover {
-    //transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    transform: scale(2.2);
-    z-index: 10;
-    //margin-left: -5%;
-    //margin-right: -5%;
-  }
+  max-width: calc(50% - 30px);
+  transition: transform 1s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+  animation: fadeIn 1.5s ease forwards;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 
   .news-title {
-    font-size: 1.5rem;
-    color: $primary-color;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 100px;
+    font-weight: bold;
   }
 
   .news-content {
-    color: $text-color;
+    font-size: 16.5px;
+    align-content: start;
+  }
+
+  &:hover {
+     transform: translateY(15px) scale(1.05);
+     //transform: translate(-50%, -50%) scale(1.05);
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+     z-index: 100;
+   }
+
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    transform: translateY(80%); // Start below the view, making it rise up
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); // Settle into final position
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.footer {
+  position: relative;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 10px 20px;
+  text-align: left;
+  color: white;
+  margin-top: 50px;
+}
+
+.footer a {
+  color: white;
+  margin: auto;
 }
